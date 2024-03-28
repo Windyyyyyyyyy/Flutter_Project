@@ -86,7 +86,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
             const SizedBox(height: 16),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, loginRoute);
+                //Navigator.pushNamed(context, loginRoute);
               }, // Hàm xử lý khi click vào "Login"
               child: RichText(
                 text: const TextSpan(
