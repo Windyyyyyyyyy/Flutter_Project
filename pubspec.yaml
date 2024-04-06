@@ -1,14 +1,16 @@
 name: market_place
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.2.5 <4.0.0'
+  sdk: ">=3.2.5 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider: ^4.2.1
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +19,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/home/categories/
+    - assets/images/home/post/
+    - assets/images/home/carousel/
+    - assets/images/home/
+    - assets/images/
