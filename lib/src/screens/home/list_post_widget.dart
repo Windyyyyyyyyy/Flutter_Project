@@ -4,6 +4,7 @@ import 'package:market_place/src/config/color_constants.dart';
 import 'package:market_place/src/config/constants.dart';
 import 'package:market_place/src/data/post.dart';
 import 'package:market_place/src/model/post.dart';
+import 'package:market_place/src/screens/post_detail/post_detail.dart';
 
 class ListPost extends StatefulWidget {
   const ListPost({super.key});
@@ -69,15 +70,23 @@ class _ListPostState extends State<ListPost> {
 
   Widget itemGridView(PostModel post) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const PostDetail()));
+      },
       child: Container(
         // color: Colors.white,
         constraints: const BoxConstraints(maxHeight: 400),
         // decoration: ,
         padding: const EdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: ColorConstants.grey,
+            width: 0.5,
+          ),
+        ),
 
         child: Column(
-          // mainAxisSize: MainAxisSize.min,
           children: [
             Expanded(
               child: Image.asset(

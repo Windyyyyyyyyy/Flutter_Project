@@ -1,4 +1,3 @@
-import 'package:market_place/src/config/constants.dart';
 import 'package:market_place/src/model/post.dart';
 
 List<PostModel> listPost = [

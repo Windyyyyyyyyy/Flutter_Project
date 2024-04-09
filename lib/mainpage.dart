@@ -24,57 +24,56 @@ class _MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor:
-          ColorConstants.green_600, // Replace with your desired color
-      statusBarIconBrightness:
-          Brightness.light, // Set the brightness of status bar icons
-    ));
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: FloatingActionButton(
-          shape: const CircleBorder(),
-          backgroundColor: ColorConstants.green_600,
-          foregroundColor: Colors.white,
-          onPressed: () {
-            // Your FloatingActionButton actions
-          },
-          child: const Icon(Icons.add),
-        ),
-        bottomNavigationBar: NavigationBar(
-          onDestinationSelected: (int index) {
-            setState(() {
-              _selectedIndex = index % _widgetOptions.length;
-            });
-          },
-          indicatorColor: ColorConstants.green_100,
-          backgroundColor: ColorConstants.green_100.withOpacity(0.2),
-          selectedIndex: _selectedIndex,
-          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-          destinations: const <Widget>[
-            NavigationDestination(
-              icon: Icon(Icons.home),
-              label: 'Trang chủ',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.list_alt),
-              label: 'Quản lý tin',
-            ),
-            // CustomNavigationDestination(),
-            NavigationDestination(
-              icon: Icon(Icons.notifications_none),
-              label: 'Thông báo',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.account_circle),
-              label: 'Tôi',
-            ),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarColor: ColorConstants.green_600,
+            statusBarIconBrightness: Brightness.light),
+        toolbarHeight: 0,
+        elevation: 0,
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
+        backgroundColor: ColorConstants.green_600,
+        foregroundColor: Colors.white,
+        onPressed: () {
+          // Your FloatingActionButton actions
+        },
+        child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          setState(() {
+            _selectedIndex = index % _widgetOptions.length;
+          });
+        },
+        indicatorColor: ColorConstants.green_100,
+        backgroundColor: ColorConstants.green_100.withOpacity(0.2),
+        selectedIndex: _selectedIndex,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(Icons.home),
+            label: 'Trang chủ',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.list_alt),
+            label: 'Quản lý tin',
+          ),
+          // CustomNavigationDestination(),
+          NavigationDestination(
+            icon: Icon(Icons.notifications_none),
+            label: 'Thông báo',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.account_circle),
+            label: 'Tôi',
+          ),
+        ],
       ),
     );
   }
