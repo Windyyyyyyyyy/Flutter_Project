@@ -3,7 +3,6 @@ import 'package:market_place/src/config/color_constants.dart';
 import 'package:market_place/src/screens/home/Carousel_widget.dart';
 import 'package:market_place/src/screens/home/list_category_widget.dart';
 import 'package:market_place/src/screens/home/list_post_widget.dart';
-import 'package:flutter/services.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});

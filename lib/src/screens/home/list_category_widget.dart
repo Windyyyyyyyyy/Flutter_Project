@@ -21,12 +21,12 @@ class _ListCategoryState extends State<ListCategory> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Row(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -36,29 +36,33 @@ class _ListCategoryState extends State<ListCategory> {
               ),
             ],
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            // alignment: Alignment.bottomCenter,
-            child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  childAspectRatio: 1,
-                  crossAxisSpacing: 4,
-                  mainAxisSpacing: 10,
-                ),
-                itemCount: lstCategory.length,
-                itemBuilder: (context, index) {
-                  if (index < lstCategory.length) {
-                    return itemGridView(lstCategory[index]);
-                  } else {
-                    return Container();
-                  }
-                }),
-          ),
-        ],
-      ),
+        ),
+        Container(
+          // margin: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          margin: const EdgeInsets.only(bottom: 10),
+          height: 200,
+          // color: ColorConstants.green_100,
+          // alignment: Alignment.bottomCenter,
+          child: GridView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+              ),
+              itemCount: lstCategory.length,
+              itemBuilder: (context, index) {
+                if (index < lstCategory.length) {
+                  return itemGridView(lstCategory[index]);
+                } else {
+                  return Container();
+                }
+              }),
+        ),
+      ],
     );
   }
 
