@@ -49,4 +49,16 @@ List<CategoryModel> categoryList = [
     isActive: true,
     imgCategory: 'assets/images/home/categories/sport.png',
   ),
+  CategoryModel(
+    idCategory: 9,
+    nameCategory: 'Thể thao',
+    isActive: true,
+    imgCategory: 'assets/images/home/categories/sport.png',
+  ),
+  CategoryModel(
+    idCategory: 10,
+    nameCategory: 'Thể thao',
+    isActive: true,
+    imgCategory: 'assets/images/home/categories/sport.png',
+  ),
 ];
