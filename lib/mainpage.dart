@@ -30,7 +30,7 @@ class _MainWidgetState extends State<MainWidget> {
             statusBarColor: ColorConstants.green_600,
             statusBarIconBrightness: Brightness.light),
         toolbarHeight: 0,
-        elevation: 0,
+        // elevation: 0,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -45,35 +45,45 @@ class _MainWidgetState extends State<MainWidget> {
         },
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            _selectedIndex = index % _widgetOptions.length;
-          });
-        },
-        indicatorColor: ColorConstants.green_100,
-        backgroundColor: ColorConstants.green_100.withOpacity(0.2),
-        selectedIndex: _selectedIndex,
-        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-        destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Trang chủ',
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.grey,
+              width: 1,
+            ),
           ),
-          NavigationDestination(
-            icon: Icon(Icons.list_alt),
-            label: 'Quản lý tin',
-          ),
-          // CustomNavigationDestination(),
-          NavigationDestination(
-            icon: Icon(Icons.notifications_none),
-            label: 'Thông báo',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.account_circle),
-            label: 'Tôi',
-          ),
-        ],
+        ),
+        child: NavigationBar(
+          onDestinationSelected: (int index) {
+            setState(() {
+              _selectedIndex = index % _widgetOptions.length;
+            });
+          },
+          indicatorColor: ColorConstants.green_100,
+          backgroundColor: ColorConstants.green_100.withOpacity(0.4),
+          selectedIndex: _selectedIndex,
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+          destinations: const <Widget>[
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Trang chủ',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.list_alt),
+              label: 'Quản lý tin',
+            ),
+            // CustomNavigationDestination(),
+            NavigationDestination(
+              icon: Icon(Icons.notifications_none),
+              label: 'Thông báo',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.account_circle),
+              label: 'Tôi',
+            ),
+          ],
+        ),
       ),
     );
   }

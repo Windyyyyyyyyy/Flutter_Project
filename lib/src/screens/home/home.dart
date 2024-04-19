@@ -26,31 +26,29 @@ class _HomeWidgetState extends State<HomeWidget> {
         backgroundColor: ColorConstants.green_500,
         toolbarHeight: 70.0,
         centerTitle: true,
-        title: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              SizedBox(
-                width: 328,
-                height: 45,
-                child: SearchBar(
-                  controller: searchController,
-                  hintText: 'Search',
-                  elevation: const MaterialStatePropertyAll<double?>(0.0),
-                  trailing: const [Icon(Icons.search)],
-                  padding: const MaterialStatePropertyAll(
-                    EdgeInsets.symmetric(horizontal: 16.0),
-                  ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            SizedBox(
+              width: 328,
+              height: 45,
+              child: SearchBar(
+                controller: searchController,
+                hintText: 'Search',
+                elevation: const MaterialStatePropertyAll<double?>(0.0),
+                trailing: const [Icon(Icons.search)],
+                padding: const MaterialStatePropertyAll(
+                  EdgeInsets.symmetric(horizontal: 16.0),
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.chat_outlined),
-                color: Colors.white,
-              )
-            ],
-          ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.chat_outlined),
+              color: Colors.white,
+            )
+          ],
         ),
       ),
       body: const SingleChildScrollView(
