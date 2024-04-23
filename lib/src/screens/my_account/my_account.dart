@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:market_place/src/config/color_constants.dart';
+import 'package:market_place/src/screens/edit_personal_info/edit_personal_info.dart';
 import 'package:market_place/src/screens/personal_info/personal_info.dart';
 import 'package:market_place/src/screens/register/register.dart';
 
@@ -96,7 +97,12 @@ class _MyAccountWidgetState extends State<MyAccountWidget> {
                 leading: const Icon(Icons.settings),
                 title: const Text("Cài đặt chung"),
                 tileColor: ColorConstants.white,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EditPersonalInfo()));
+                },
               ),
             ),
             const Divider(height: 0),
